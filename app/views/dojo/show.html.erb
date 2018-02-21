@@ -1,0 +1,38 @@
+<div id="container">
+    
+    <p><a href ='/'>Home</a> | <a href='/dojos/<%= @dojo.id %>/edit'>Edit</a> | <a href = '/dojos/<%= @dojo_id %>/students/new'>Add New Student</a></p>
+    
+    <h2><%= @dojo.branch %> </h2>
+
+    <p>Address: <%= @dojo.street %></p>
+    <p>City: <%= @dojo.city %> State: <%= @dojo.state %></p>
+
+    <h3>Student Roster</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @students.each do |student| %>
+                <tr>
+                    <td> <%= student.first_name %> </td>
+                    <td> <%= student.last_name %> </td>
+                    <td> <%= student.email %> </td>
+                    <td> 
+                        <a href='/dojos/<%= @dojo_id %>/students/<%= student.id %>'>Show</a> 
+                        &nbsp&nbsp&nbsp
+                        <a href='/dojos/<%= @dojo_id %>/students/<%= student.id %>/edit'>Edit</a>  
+                        &nbsp&nbsp&nbsp 
+                        <a href = '/dojos/<%= @dojo_id %>/students/<%= student.id %>/delete'>Delete</a>
+                    </td>
+                </tr>
+            <% end %>  
+        </tbody>       
+    </table>
+
+</div>

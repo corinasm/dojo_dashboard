@@ -1,0 +1,32 @@
+<div id="container">
+
+    <a href='/'> Home</a>
+
+    <h2>New Student</h2>
+
+    <form action='/dojos/<%= @selected_dojo.id%>/students' method='post'>
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <p class="categ">First Name:</p>
+                <p><input class="input" type="text" name="first_name"></p>
+            <p class="categ">Last Name:</p> 
+                <p><input class="input" type="text" name="last_name"></p>
+            <p class="categ">Email Address:</p>
+                <p><input class="input" type="text" name="email"></p>
+            <p class="categ">Dojo:</p>
+                <select class="select" name = "dojo_id">
+                    <% @dojos.each do |dojo| %>
+                        <% if dojo.id == @selected_dojo.id %>
+                            <option value = "<%= dojo.id %>" selected="selected"> <%= dojo.branch %></option>
+                        <% else %>   
+                            <option value = "<%= dojo.id %>"> <%= dojo.branch %> </option>  
+                        <% end %>
+                    <% end %> 
+                </select> 
+            <p><input type='submit' class="btn" value='Add'></p>
+    </form>
+
+  
+
+
+</div>    
+

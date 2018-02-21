@@ -1,0 +1,21 @@
+<div id="container">
+    <h2>New Dojo</h2>
+
+
+    <form action='/create' method='post'>
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <p class="categ">Branch:</p>
+                <p><input class="input" type="text" name="branch"></p>
+            <p class="categ">Street:</p> 
+                <p><input class="input" type="text" name="street"></p>
+            <p class="categ">City:</p>
+                <p><input class="input" type="text" name="city"></p>
+            <p class="categ">State:</p>
+                <p><input class="input" type="text" name="state"></p>
+                <p><input type='submit' class="btn" value='Add'></p>
+    </form>
+
+    <a href='/'> Home</a>
+
+
+</div>    

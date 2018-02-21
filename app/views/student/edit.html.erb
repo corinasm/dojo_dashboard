@@ -1,0 +1,36 @@
+<div id="container">
+<a href='/'> Home</a>
+
+    <h2>Editing <%= @student.first_name %>  <%= @student.last_name %> </h2>
+
+   
+    <form action="/dojos/<%= @student_dojo.id %>/students/<%= @student.id %>" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="hidden" name="_method" value="patch>">
+            <p class="categ">First Name:</p>
+            <input class="input" type="text" name="first_name" value="<%= @student.first_name %>">
+            <p class="categ">Last Name:</p> 
+            <input class="input" type="text" name="last_name" value="<%= @student.last_name %>">
+            <p class="categ">Email Address:</p>
+            <input class="input" type="text" name="email" value="<%= @student.email %>">
+            <p class="categ">Dojo:</p>
+            <select name = "dojo_id" class="select">
+                <% @dojos.each do |dojo| %>
+                    <% if dojo.id == @student_dojo.id %>
+                        <option value = "<%= dojo.id %>" selected="selected"> <%= dojo.branch %></option>
+                    <% else %>   
+                    <option value = "<%= dojo.id %>"> <%= dojo.branch %> </option>  
+                    <% end %>
+                <% end %> 
+
+            </select> 
+            <p><input type="submit" class="btn" value="Update Student"></p>
+                    
+
+            
+    </form>
+
+   
+
+
+</div>    

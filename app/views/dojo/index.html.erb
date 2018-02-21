@@ -1,0 +1,30 @@
+<div id="container">
+    <h1>CODING DOJO BRANCHES</h1>
+    <a href = "/dojos/new" class ="center"> Add New Dojo </a>
+    <table class="cen">
+        <thead>
+            <tr>
+                <th>Branch</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @dojos.each do |dojo| %>
+                <tr>
+                    <td> <%= dojo.branch %> </td>
+                    <td> <%= dojo.street %> </td>
+                    <td> <%= dojo.city %> </td>
+                    <td> <%= dojo.state %> </td>
+                    <td> 
+                        <a href="/dojos/<%= dojo.id %>">Show</a> &nbsp&nbsp&nbsp 
+                        <a href="/dojos/<%= dojo.id %>/edit">Edit</a> &nbsp&nbsp&nbsp 
+                        <a href="/dojos/<%= dojo.id %>/destroy">Delete </a>
+                    </td> 
+                </tr>
+            <% end %>  
+        </tbody>       
+    </table>
+</div>

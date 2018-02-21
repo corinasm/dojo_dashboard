@@ -1,0 +1,11 @@
+<div id="container">
+    <h2>Student Info</h2>
+
+    <p><a href ="/">Home</a> | <a href="/dojos/<%= @student_dojo.id %>/students/<%= @selected_student.id %>/edit">Edit Student Info</a></p>
+
+    <h3><%= @selected_student.first_name %> <%= @selected_student.last_name %> | <%= @student_dojo.branch %> </h3>
+    
+    <p>email: <%= @selected_student.email %></p>
+
+    
+</div>    
